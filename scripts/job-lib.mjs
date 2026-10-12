@@ -22,6 +22,13 @@ export const ADAPTERS = {
     voDir: "public/promo-openbtob/vo",
     voName: (id) => `beat-${String(id).padStart(2, "0")}.mp3`,
   },
+  HsDutyVi: {
+    scenes: 10,
+    narrationFile: "src/hs-duty/narration.mjs",
+    durationsFile: "src/hs-duty/vo-durations.json",
+    voDir: "public/hs-duty/vo",
+    voName: (id) => `beat-${String(id).padStart(2, "0")}.mp3`,
+  },
 };
 
 // Content rules: no prices, no competitors, no unverified duty rates, no vendor names.
