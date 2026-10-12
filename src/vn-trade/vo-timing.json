@@ -1,0 +1,97 @@
+{
+  "hook": {
+    "duration": 8.688,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 4.17
+      },
+      {
+        "start": 4.12,
+        "end": 8.634
+      }
+    ]
+  },
+  "record": {
+    "duration": 4.608,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 4.598
+      }
+    ]
+  },
+  "products": {
+    "duration": 11.4,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 6.207
+      },
+      {
+        "start": 6.157,
+        "end": 11.342
+      }
+    ]
+  },
+  "markets": {
+    "duration": 9.192,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 3.869
+      },
+      {
+        "start": 3.819,
+        "end": 9.143
+      }
+    ]
+  },
+  "coffee": {
+    "duration": 16.992,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 2.087
+      },
+      {
+        "start": 2.037,
+        "end": 7.256
+      },
+      {
+        "start": 7.256,
+        "end": 13.425
+      },
+      {
+        "start": 13.425,
+        "end": 16.944
+      }
+    ]
+  },
+  "insight": {
+    "duration": 9,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 3.962
+      },
+      {
+        "start": 3.912,
+        "end": 8.946
+      }
+    ]
+  },
+  "cta": {
+    "duration": 7.2,
+    "lines": [
+      {
+        "start": 0.1,
+        "end": 3.151
+      },
+      {
+        "start": 3.101,
+        "end": 7.141
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+name: render-jobs
+
+on:
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Job slug (file name in jobs/ without .yaml), or all"
+        default: all
+  push:
+    paths:
+      - "jobs/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-jobs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+      count: ${{ steps.m.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: m
+        env:
+          INPUT_JOB: ${{ inputs.job }}
+          BEFORE: ${{ github.event.before }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = "push" ] && ! echo "$BEFORE" | grep -qE '^0+$'; then
+            changed=$(git diff --name-only --diff-filter=AM "$BEFORE" "$GITHUB_SHA" -- 'jobs/*.yaml' | tr '\n' ' ')
+            [ -n "$changed" ] || changed="none"
+            if [ "$changed" = "none" ]; then matrix='{"include":[]}'; else matrix=$(node scripts/list-jobs.mjs $changed); fi
+          else
+            matrix=$(node scripts/list-jobs.mjs "${INPUT_JOB:-all}")
+          fi
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+          echo "count=$(echo "$matrix" | node -e 'process.stdout.write(String(JSON.parse(require("fs").readFileSync(0,"utf8")).include.length))')" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    if: needs.plan.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: System tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          pipx install edge-tts
+      - name: Validate spec
+        run: node scripts/run-job.mjs validate ${{ matrix.file }}
+      - name: Voice
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/run-job.mjs voice ${{ matrix.file }}
+      - name: Render
+        run: node scripts/run-job.mjs render ${{ matrix.file }}
+      - name: SFX and encode
+        run: node scripts/run-job.mjs post ${{ matrix.file }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.slug }}
+          path: out/${{ matrix.slug }}.mp4
+          if-no-files-found: error
+          retention-days: 14
