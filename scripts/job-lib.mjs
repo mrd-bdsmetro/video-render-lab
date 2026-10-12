@@ -15,6 +15,13 @@ export const ADAPTERS = {
     voDir: "public/hs-explainer/vo",
     voName: (id) => `beat-${String(id).padStart(2, "0")}.mp3`,
   },
+  PromoOpenbtobVi: {
+    scenes: 5,
+    narrationFile: "src/promo-openbtob/narration.mjs",
+    durationsFile: "src/promo-openbtob/vo-durations.json",
+    voDir: "public/promo-openbtob/vo",
+    voName: (id) => `beat-${String(id).padStart(2, "0")}.mp3`,
+  },
 };
 
 // Content rules: no prices, no competitors, no unverified duty rates, no vendor names.

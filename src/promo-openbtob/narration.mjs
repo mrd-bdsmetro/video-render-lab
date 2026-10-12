@@ -1,0 +1,28 @@
+// Generated from jobs/promo-vi-30s.yaml by scripts/run-job.mjs
+export const NARRATION = [
+  {
+    "id": 1,
+    "tts": "Cần tra mã hát ét cho lô hàng? Có một công cụ miễn phí cho việc này.",
+    "text": "Cần tra mã HS cho lô hàng? Có một công cụ miễn phí cho việc này."
+  },
+  {
+    "id": 2,
+    "tts": "Gõ tên hàng, ví dụ ground roasted coffee. Danh sách mã kèm mô tả hiện ngay.",
+    "text": "Gõ tên hàng, ví dụ ground roasted coffee. Danh sách mã kèm mô tả hiện ngay."
+  },
+  {
+    "id": 3,
+    "tts": "Sáu số đầu là mã quốc tế dùng chung. Các số sau thuộc riêng từng nước.",
+    "text": "Sáu số đầu là mã quốc tế dùng chung. Các số sau thuộc riêng từng nước."
+  },
+  {
+    "id": 4,
+    "tts": "Tra cứu miễn phí, không cần đăng ký.",
+    "text": "Tra cứu miễn phí, không cần đăng ký."
+  },
+  {
+    "id": 5,
+    "tts": "Thử tại open bi tu bi chấm com, gạch chéo hát ét. Thông tin tham khảo, không phải tư vấn pháp lý.",
+    "text": "Thử tại openbtob.com/hs. Thông tin tham khảo, không phải tư vấn pháp lý."
+  }
+];
