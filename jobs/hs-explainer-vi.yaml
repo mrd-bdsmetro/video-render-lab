@@ -1,0 +1,40 @@
+slug: hs-explainer-vi
+composition: HsExplainerVi
+voice:
+  provider: elevenlabs
+  model: eleven_v3
+  edge_voice: vi-VN-HoaiMyNeural
+  rate: 5
+scenes:
+  - id: 1
+    tts: Một lô cà phê, sáu chữ số. Con số đó quyết định bạn đóng bao nhiêu thuế.
+    text: Một lô cà phê, sáu chữ số. Con số đó quyết định bạn đóng bao nhiêu thuế.
+  - id: 2
+    tts: Hát ét là hệ thống phân loại hàng hóa của Tổ chức Hải quan Thế giới. Hơn hai trăm quốc gia dùng chung.
+    text: HS là hệ thống phân loại hàng hóa của Tổ chức Hải quan Thế giới. Hơn 200 quốc gia dùng chung.
+  - id: 3
+    tts: Hai số đầu là chương, bốn số là nhóm, sáu số là phân nhóm. Đây là phần quốc tế dùng chung.
+    text: Hai số đầu là chương, bốn số là nhóm, sáu số là phân nhóm. Đây là phần quốc tế dùng chung.
+  - id: 4
+    tts: Cà phê nhân chưa rang là không chín không một, một một. Cà phê đã rang là không chín không một, hai một.
+    text: Cà phê nhân chưa rang là 0901 11. Cà phê đã rang là 0901 21.
+  - id: 5
+    tts: Sáu số đầu giống nhau trên toàn cầu. Từ đó mỗi nước thêm số riêng. Việt Nam dùng tám số.
+    text: Sáu số đầu giống nhau trên toàn cầu. Từ đó mỗi nước thêm số riêng. Việt Nam dùng tám số.
+  - id: 6
+    tts: Biểu thuế gắn một mức thuế cho mỗi mã. Khai sai mã, thuế sai theo.
+    text: Biểu thuế gắn một mức thuế cho mỗi mã. Khai sai mã, thuế sai theo.
+  - id: 7
+    tts: Nước nhập khẩu quyết định thuế. Thuế thường áp cho mọi nước. Hiệp định như ê vê ép tê a hay xi pi tê pê pê có thể cho mức ưu đãi.
+    text: Nước nhập khẩu quyết định thuế. Thuế thường áp cho mọi nước. Hiệp định như EVFTA hay CPTPP có thể cho mức ưu đãi.
+  - id: 8
+    tts: "Muốn hưởng ưu đãi, cần chứng từ xuất xứ. Vào Liên minh châu Âu theo ê vê ép tê a: mẫu ê u rô một, hoặc tự khai xuất xứ cho lô nhỏ."
+    text: "Muốn hưởng ưu đãi, cần chứng từ xuất xứ. Vào EU theo EVFTA: C/O mẫu EUR.1, hoặc tự khai xuất xứ cho lô nhỏ."
+  - id: 9
+    tts: "Ba bước: xác định mã, tra thuế ở nước nhập khẩu, chuẩn bị chứng từ xuất xứ."
+    text: "Ba bước: xác định mã, tra thuế ở nước nhập khẩu, chuẩn bị chứng từ xuất xứ."
+  - id: 10
+    tts: Cần tra mã hát ét? Thử công cụ tại open bi tu bi chấm com, gạch chéo, hát ét. Thông tin tham khảo, không phải tư vấn pháp lý.
+    text: Cần tra mã HS? Thử công cụ tại openbtob.com/hs. Thông tin tham khảo, không phải tư vấn pháp lý.
+images: []
+sfx: []

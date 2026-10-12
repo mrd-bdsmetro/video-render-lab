@@ -1,0 +1,35 @@
+{
+  "voice": "vi-VN-HoaiMyNeural",
+  "rate": "+0%",
+  "scenes": [
+    { "id": "hook", "lines": [
+      { "text": "Mỗi giây, Việt Nam xuất khẩu hơn 15.000 đô la hàng hóa.", "tts": "Mỗi giây, Việt Nam xuất khẩu hơn mười lăm nghìn đô la hàng hóa." },
+      { "text": "Cả năm 2025: khoảng 475 tỷ USD.", "tts": "Cả năm hai nghìn không trăm hai mươi lăm, khoảng bốn trăm bảy mươi lăm tỷ đô la." }
+    ] },
+    { "id": "record", "lines": [
+      { "text": "Xuất khẩu tăng 17%, và vẫn xuất siêu khoảng 20 tỷ USD.", "tts": "Xuất khẩu tăng mười bảy phần trăm, và vẫn xuất siêu khoảng hai mươi tỷ đô la." }
+    ] },
+    { "id": "products", "lines": [
+      { "text": "Đứng đầu là điện tử và máy tính: hơn 107 tỷ USD, nhóm hàng đầu tiên vượt mốc 100 tỷ.", "tts": "Đứng đầu là điện tử và máy tính, hơn một trăm linh bảy tỷ đô la, nhóm hàng đầu tiên vượt mốc một trăm tỷ." },
+      { "text": "Rồi đến máy móc, điện thoại, dệt may, giày dép, gỗ, thủy sản.", "tts": "Rồi đến máy móc, điện thoại, dệt may, giày dép, gỗ, thủy sản." }
+    ] },
+    { "id": "markets", "lines": [
+      { "text": "Hoa Kỳ mua nhiều nhất: hơn 153 tỷ USD.", "tts": "Hoa Kỳ mua nhiều nhất, hơn một trăm năm mươi ba tỷ đô la." },
+      { "text": "Trung Quốc khoảng 70 tỷ, châu Âu khoảng 56 tỷ, Hàn Quốc gần 29 tỷ.", "tts": "Trung Quốc khoảng bảy mươi tỷ, châu Âu khoảng năm mươi sáu tỷ, Hàn Quốc gần hai mươi chín tỷ." }
+    ] },
+    { "id": "coffee", "lines": [
+      { "text": "Còn cà phê thì sao?", "tts": "Còn cà phê thì sao?" },
+      { "text": "Gần 1,6 triệu tấn, khoảng 8,9 tỷ USD, tăng gần 59%.", "tts": "Gần một phẩy sáu triệu tấn, khoảng tám phẩy chín tỷ đô la, tăng gần năm mươi chín phần trăm." },
+      { "text": "Theo Bộ Nông nghiệp Hoa Kỳ, Việt Nam đứng thứ hai thế giới về xuất khẩu cà phê, và trồng nhiều robusta nhất.", "tts": "Theo Bộ Nông nghiệp Hoa Kỳ, Việt Nam đứng thứ hai thế giới về xuất khẩu cà phê, và trồng nhiều robusta nhất." },
+      { "text": "Cà phê là ngành hàng đầu tiên của OpenBtoB.", "tts": "Cà phê là ngành hàng đầu tiên của Open Bi Tu Bi." }
+    ] },
+    { "id": "insight", "lines": [
+      { "text": "Hơn 88% hàng xuất khẩu là hàng công nghiệp chế biến.", "tts": "Hơn tám mươi tám phần trăm hàng xuất khẩu là hàng công nghiệp chế biến." },
+      { "text": "Mỗi mặt hàng có một mã HS, và mỗi mã HS có người mua đang tìm nhà cung cấp.", "tts": "Mỗi mặt hàng có một mã H S, và mỗi mã H S có người mua đang tìm nhà cung cấp." }
+    ] },
+    { "id": "cta", "lines": [
+      { "text": "Bạn bán mặt hàng gì, và ai đang mua?", "tts": "Bạn bán mặt hàng gì, và ai đang mua?" },
+      { "text": "Tra mã HS và tìm người mua tại openbtob.com.", "tts": "Tra mã H S và tìm người mua tại Open Bi Tu Bi chấm com." }
+    ] }
+  ]
+}
