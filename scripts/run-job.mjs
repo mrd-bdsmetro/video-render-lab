@@ -21,10 +21,26 @@ function validate() {
   console.log(`ok ${job.slug}: ${job.scenes.length} scenes, ${charCount(job)} voice chars`);
 }
 
+// Free plans cannot use library voices through the API, so default to a premade voice of the account.
+let voiceCache;
+async function pickVoice(key) {
+  if (job.voice?.voice_id) return job.voice.voice_id;
+  if (!voiceCache) {
+    const res = await fetch("https://api.elevenlabs.io/v1/voices", { headers: { "xi-api-key": key } });
+    const list = res.ok ? (await res.json()).voices ?? [] : [];
+    const premade = list.filter((v) => v.category === "premade");
+    const v = premade.find((x) => x.name === job.voice?.name) ?? premade[0];
+    if (!v) throw new Error(`no premade ElevenLabs voice found (voices status ${res.status})`);
+    console.log(`elevenlabs voice ${v.name}`);
+    voiceCache = v.voice_id;
+  }
+  return voiceCache;
+}
+
 async function elevenLabs(text, dest) {
   const key = process.env.ELEVENLABS_API_KEY;
   if (!key) return false;
-  const voiceId = job.voice?.voice_id ?? "21m00Tcm4TlvDq8ikWAM";
+  const voiceId = await pickVoice(key);
   mkdirSync(out, { recursive: true });
   const bodyFile = `${out}/tts-request.json`;
   writeFileSync(bodyFile, JSON.stringify({ text, model_id: "eleven_v3", voice_settings: { stability: 0.5 } }), "utf8");
