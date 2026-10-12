@@ -34,7 +34,7 @@ async function elevenLabs(text, dest) {
     body: readFileSync(bodyFile),
   });
   if (!res.ok) {
-    console.log(`elevenlabs status ${res.status}, falling back to edge-tts`);
+    console.log(`elevenlabs status ${res.status} ${(await res.text()).slice(0, 300)}, falling back to edge-tts`);
     return false;
   }
   writeFileSync(dest, Buffer.from(await res.arrayBuffer()));
@@ -44,11 +44,12 @@ async function elevenLabs(text, dest) {
 function edge(text, dest) {
   const rate = job.voice?.rate ?? 0;
   const voice = job.voice?.edge_voice ?? "vi-VN-HoaiMyNeural";
+  let r;
   for (let i = 0; i < 4; i++) {
-    const r = spawnSync("edge-tts", ["--voice", voice, `--rate=+${rate}%`, "--text", text, "--write-media", dest], { encoding: "utf8" });
+    r = spawnSync("edge-tts", ["--voice", voice, `--rate=+${rate}%`, "--text", text, "--write-media", dest], { encoding: "utf8" });
     if (r.status === 0) return;
   }
-  throw new Error("edge-tts failed after 4 attempts");
+  throw new Error(`edge-tts failed after 4 attempts: ${(r.stderr ?? "").slice(-300)}`);
 }
 
 async function voice() {
