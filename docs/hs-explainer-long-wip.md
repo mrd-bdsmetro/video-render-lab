@@ -15,3 +15,5 @@ Next
 - Full render: run the workflow, or `npx remotion render src/index.ts HsExplainerLong out/hs-explainer-long.mp4`.
 - Polish: scenes are template-driven (cards, digits, compare, search); add richer collage art (coffee beans, wood, cashew) if wanted.
 - Verify facts once more against the WCO HS and the HTS before publishing.
+
+Status 2026-10-13: local draft (first 3:00) rendered to `out/hs-explainer-long-draft.mp4` in the lab clone (out/ is git-ignored). Full render running in Actions: run 38343393458 (workflow `render-hs-long`, artifact `hs-explainer-long`, 14 days). Download: `gh run download 38343393458 -n hs-explainer-long`. If it failed, check the render step log, then render locally (about 27 min).
